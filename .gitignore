@@ -1,0 +1,13 @@
+.env
+venv
+testenv
+models
+.DS_Store
+assets
+temp.txt
+
+.terraform
+.terraform.lock.hcl
+terraform.tfstate.d
+
+build.zip

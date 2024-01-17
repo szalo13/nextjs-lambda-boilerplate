@@ -1,14 +1,11 @@
 // next.config.js
-const env = process.env.NODE_ENV;
-const development = (env || '').toLocaleLowerCase() === 'local';
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   // Standalone output for lambda build
   output: "standalone",
   // Preset for assets when stored on s3 bucket
-  assetPrefix: development ? '' : process.env.ASSETS_PREFIX,
+  assetPrefix: process.env.ASSETS_PREFIX || '',
   images: {
     unoptimized: true,
   },

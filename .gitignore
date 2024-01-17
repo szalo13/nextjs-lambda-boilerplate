@@ -10,4 +10,5 @@ temp.txt
 .terraform.lock.hcl
 terraform.tfstate.d
 
+deployment.zip
 build.zip

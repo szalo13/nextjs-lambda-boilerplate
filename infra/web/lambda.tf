@@ -1,7 +1,7 @@
 data "archive_file" "function_package" {
     type = "zip"
-    source_dir = "${var.build_dir}"
-    output_path = "deployment.zip"
+    source_dir = "${var.website_dir}/build"
+    output_path = "${var.website_dir}/deployment.zip"
 }
 
 resource "aws_lambda_function" "dynamic_website_lambda" {

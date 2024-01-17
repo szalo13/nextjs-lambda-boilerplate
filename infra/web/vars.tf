@@ -1,5 +1,5 @@
-variable "build_dir" {
-  default = "../web/.build-standalone"
+variable "website_dir" {
+  default = "../web"
 }
 
 variable "profile" {

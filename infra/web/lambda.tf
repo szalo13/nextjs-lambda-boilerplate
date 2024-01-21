@@ -29,3 +29,13 @@ resource "aws_lambda_function_url" "dynamic-website-url" {
   function_name = aws_lambda_function.dynamic_website_lambda.function_name
   authorization_type = "NONE"
 }
+
+resource "aws_lambda_permission" "api_gateway_invoke_lambda" {
+  statement_id  = "AllowExecutionFromAPIGateway"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.dynamic_website_lambda.function_name
+  principal     = "apigateway.amazonaws.com"
+
+  // The 'source_arn' should match the ARN of your API Gateway endpoint
+  source_arn = "${aws_api_gateway_rest_api.example_api.execution_arn}/*/*/*"
+}

@@ -26,3 +26,13 @@ variable "module" {
   type = string
   default = "web"
 }
+
+variable "domain_name" {
+  description = "The domain name for the website"
+  type        = string
+}
+
+variable "certificate_arn" {
+  description = "ARN of the SSL certificate in AWS Certificate Manager"
+  type        = string
+}

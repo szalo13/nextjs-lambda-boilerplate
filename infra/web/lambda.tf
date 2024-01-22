@@ -37,5 +37,5 @@ resource "aws_lambda_permission" "api_gateway_invoke_lambda" {
   principal     = "apigateway.amazonaws.com"
 
   // The 'source_arn' should match the ARN of your API Gateway endpoint
-  source_arn = "${aws_api_gateway_rest_api.example_api.execution_arn}/*/*/*"
+  source_arn = "${aws_api_gateway_rest_api.web_api.execution_arn}/*/*/*"
 }
